@@ -23,9 +23,13 @@ class App extends React.Component {
     login = () => {
         const { cookies } = this.props;
         const { username, password } = this.state;
-        const endpoint = process.env.ENDPOINT || '';
+        const endpoint = process.env.ENDPOINT;
 
-        fetch(`${endpoint}\login`, {
+        if(!endpoint) {
+            return
+        }
+        
+        fetch(`${endpoint}/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
