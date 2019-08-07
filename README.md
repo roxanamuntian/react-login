@@ -1,4 +1,4 @@
-# Login with react
+# Login using react
 
 ## Simple login app
 
